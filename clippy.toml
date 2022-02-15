@@ -1,0 +1,10 @@
+disallowed-methods = [
+    # Consider using `ahash::AHashMap` when collisions are not a security concern.
+    "std::collections::HashMap",
+    # Consider using `ahash::AHashSet` when collisions are not a security concern.
+    "std::collections::HashSet",
+    # Consider using `std::option::Option::expect` so that context can be provided.
+    "std::option::Option::unwrap",
+    # Consider using `std::result::Result::expect` so that context can be provided.
+    "std::result::Result::unwrap",
+]

@@ -1,0 +1,9 @@
+[Unit]
+Description=synchronise cargo package registry
+
+[Service]
+Type=oneshot
+ExecStart=crateful --path /path/to/cache sync
+
+[WantedBy]
+WantedBy=multi-user.target

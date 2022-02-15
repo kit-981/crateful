@@ -1,0 +1,9 @@
+[Unit]
+Description=synchronise cargo package registry daily
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target
