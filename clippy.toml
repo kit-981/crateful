@@ -1,10 +1,15 @@
-disallowed-methods = [
-    # Consider using `ahash::AHashMap` when collisions are not a security concern.
-    "std::collections::HashMap",
-    # Consider using `ahash::AHashSet` when collisions are not a security concern.
-    "std::collections::HashSet",
-    # Consider using `std::option::Option::expect` so that context can be provided.
-    "std::option::Option::unwrap",
-    # Consider using `std::result::Result::expect` so that context can be provided.
-    "std::result::Result::unwrap",
-]
+[[disallowed-types]]
+path = 'std::collections::HashMap'
+reason = 'consider using ahash::AHashMap'
+
+[[disallowed-types]]
+path = 'std::collections::HashSet'
+reason = 'consider using ahash::AHashSet'
+
+[[disallowed-methods]]
+path = 'std::option::Option::unwrap'
+reason = 'consider providing context with std::option::Option::expect'
+
+[[disallowed-methods]]
+path = 'std::result::Result::unwrap'
+reason = 'consider providing context with std::result::Result::expect'
