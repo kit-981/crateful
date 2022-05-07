@@ -6,7 +6,7 @@ use serde::Deserialize;
 use std::{
     convert::Into,
     error::Error,
-    fmt::{self, Display, Formatter},
+    fmt::{self, Display, Formatter, Write},
 };
 use url::Url;
 
@@ -81,10 +81,7 @@ impl Configuration {
             // The documentation mentions that if none of the markers are present then
             // /{crate}/{version}/download is appended to the configuration download url.
             let mut default = self.template.clone();
-            default.push_str(&format!(
-                "/{}/{}/{}",
-                &crate_.name, &crate_.version, "download"
-            ));
+            write!(default, "/{}/{}/download", &crate_.name, &crate_.version).expect("invalid url");
             default
         } else {
             templated
