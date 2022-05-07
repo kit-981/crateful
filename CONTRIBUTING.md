@@ -30,8 +30,7 @@ in parallel.
 
 The integration tests for `crateful` are self-contained. To exercise components that use
 [reqwest](https://docs.rs/reqwest/latest/reqwest/) and [git2](https://docs.rs/git2/latest/git2/),
-the integration tests start their own web server and host simulated registries. This test data is
-stored in `resources/tests` as sub-modules.
+the integration tests start their own web server and host simulated registries.
 
 ### Coverage
 
